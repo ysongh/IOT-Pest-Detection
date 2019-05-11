@@ -1,4 +1,23 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
 .title{
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #aeaebd;
+}
+
+.footer{
+    background-color: #aeaebd;
+    padding: 1rem 0;
+}
+
+.footer p{
     text-align: center;
     text-transform: uppercase;
 }
