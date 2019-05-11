@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 <body>
+  <h1 class="title">iot-pest-detection</h1>
   <svg width="960" height="720"></svg>
   <div id='neighborhoodPopover'> </div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -27,9 +28,23 @@ d3.json(link123, function(error, nyc) {
       .data(nyc.features)
       .enter().append("path")
       .attr("d", path)
+      .style("fill", function(d) {
+        switch(d.properties.borough){
+          case 'Queens':
+            return "blue";
+          case 'Bronx':
+            return "green";
+          case 'Brooklyn':
+            return "red";
+          case 'Manhattan':
+            return 'orange';
+          default:
+            return 'black';
+        }
+        return d.properties.borough === 'Queens' ? "blue": "black"
+      })
       .on("mouseenter", function(d) {
         console.log(d);
-        console.log(d.properties.borough);
       d3.select(this)
       .style("stroke-width", 1.5)
       .style("stroke-dasharray", 0)
@@ -40,7 +55,7 @@ d3.json(link123, function(error, nyc) {
       .style("color", (d.properties.borough === 'Queens' ? "blue": "black"))
       .style("left", (d3.event.pageX) + "px")
       .style("top", (d3.event.pageY) + "px")
-      .text(d.properties.neighborhood)
+      .text(d.properties.neighborhood + " "+ d.properties.boroughCode)
     })
     .on("mouseleave", function(d) { 
       d3.select(this)
