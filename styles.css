@@ -39,7 +39,7 @@ body{
 
 .legend{
     width: 14rem;
-    padding: 1rem 2rem 2rem 2rem;
+    padding: 2rem;
     background-color: #95a9bb;
     border: 5px dashed blue;
     opacity: .85;
@@ -57,10 +57,6 @@ body{
 }
 
 .legend__item-1{
-    background-color: blue;
-}
-
-.legend__item-2{
     background-color: green;
 }
 
