@@ -1,7 +1,8 @@
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height"),
-    changeColor = false;
+    changeColor = false,
+    list = ["blue", "green", "yellow", "orange", "red"];
 
 var link123 = "http://data.beta.nyc//dataset/0ff93d2d-90ba-457c-9f7e-39e47bf2ac5f/resource/35dd04fb-81b3-479b-a074-a27a37888ce7/download/d085e2f8d0b54d4590b1e7d1f35594c1pediacitiesnycneighborhoods.geojson";
 d3.json(link123, function(error, nyc) {
@@ -65,17 +66,7 @@ window.setInterval(function(){
   changeColor = !changeColor;
   svg.selectAll("path")
       .style("fill", function(d) {
-        switch(d.properties.borough){
-          case 'Queens':
-            return changeColor ? 'gold' : 'orange';
-          case 'Bronx':
-            return changeColor ? 'grey' : "blue";
-          case 'Brooklyn':
-            return changeColor ? 'red' : "yellow";
-          case 'Manhattan':
-            return changeColor ? 'blue' : 'green';
-          default:
-            return changeColor ? 'black' : 'red';
-        }
+        let num = Math.floor((Math.random() * 5));
+        return list[num];
       })
 }, 2000);
