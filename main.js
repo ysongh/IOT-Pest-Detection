@@ -73,7 +73,8 @@ window.setInterval(function(){
   document.getElementById("date").innerHTML = monthNames[count];
   svg.selectAll("path")
       .style("fill", function(d) {
+        
         let num = Math.floor((Math.random() * 8));
         return list[num];
       })
-}, 2000);
+}, 3000);
