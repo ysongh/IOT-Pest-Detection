@@ -22,6 +22,26 @@
     text-transform: uppercase;
 }
 
+.grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 90px);
+}
+
+.legend{
+    width: 14rem;
+    height: 12rem;
+    padding: 2rem;
+    background-color: aliceblue;
+    grid-column: 2 / 4;
+    grid-row: 2 / 5;
+}
+
+.map{
+    grid-column: 3 / 8;
+    grid-row: 2 / 9;
+}
+
 path {
     stroke: #fff;
     stroke-width: .5;
