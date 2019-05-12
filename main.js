@@ -2,7 +2,10 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height"),
     changeColor = false,
-    list = ["green", "yellow", "orange", "red", "#9aea6b", "#deef5d", "#efcc5c", "#d8806a"];
+    list = ["green", "yellow", "orange", "red", "#9aea6b", "#deef5d", "#efcc5c", "#d8806a"],
+    monthNames = [ "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December" ],
+    count = 0;
 
 var link123 = "http://data.beta.nyc//dataset/0ff93d2d-90ba-457c-9f7e-39e47bf2ac5f/resource/35dd04fb-81b3-479b-a074-a27a37888ce7/download/d085e2f8d0b54d4590b1e7d1f35594c1pediacitiesnycneighborhoods.geojson";
 d3.json(link123, function(error, nyc) {
@@ -63,7 +66,11 @@ d3.json(link123, function(error, nyc) {
 });
 
 window.setInterval(function(){
-  changeColor = !changeColor;
+  count++;
+  if(count >= 12){
+    count = 0;
+  }
+  document.getElementById("date").innerHTML = monthNames[count];
   svg.selectAll("path")
       .style("fill", function(d) {
         let num = Math.floor((Math.random() * 8));

@@ -38,7 +38,7 @@ body{
 }
 
 .legend{
-    width: 19rem;
+    width: 21rem;
     padding: 2rem 1rem 1rem 2rem;
     background-color: #95a9bb;
     border: 5px dashed blue;
@@ -60,7 +60,7 @@ body{
 }
 
 .legend__item{
-    
+    padding: .4rem .2rem;
 }
 
 .legend__item-1{
@@ -81,6 +81,27 @@ body{
 .legend__item-4{
     grid-column: 4 / 4;
     background: linear-gradient(to right, #aabe63 0%, #139c1e 100%);
+}
+
+.timer{
+    width: 21rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+    background-color: #95a9bb;
+    border: 5px dashed blue;
+    grid-column: 2 / 4;
+    grid-row: 5 / 6;
+    text-align: center;
+
+    display: inline;
+}
+
+.date-name{
+    font-size: 1.5rem;
+    color: #020250;
+}
+
+#date{
+    font-size: 1.6rem;
 }
 
 .map{
