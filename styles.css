@@ -10,6 +10,7 @@
     text-align: center;
     text-transform: uppercase;
     background-color: #aeaebd;
+    padding: .5rem 0;
 }
 
 .footer{
@@ -30,11 +31,39 @@
 
 .legend{
     width: 14rem;
-    height: 12rem;
     padding: 2rem;
     background-color: aliceblue;
     grid-column: 2 / 4;
     grid-row: 2 / 5;
+}
+
+.legend__title{
+    font-size: 1.6rem;
+}
+
+.legend__item{
+    list-style: none;
+    padding: .6rem;
+}
+
+.legend__item-1{
+    background-color: blue;
+}
+
+.legend__item-2{
+    background-color: green;
+}
+
+.legend__item-3{
+    background-color: yellow;
+}
+
+.legend__item-4{
+    background-color: orange;
+}
+
+.legend__item-5{
+    background-color: red;
 }
 
 .map{
