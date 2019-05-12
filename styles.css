@@ -34,14 +34,15 @@ body{
 .grid{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(10, 90px);
+    grid-template-rows: 50px repeat(9, 90px);
 }
 
 .legend{
-    width: 17rem;
+    width: 19rem;
     padding: 2rem 1rem 1rem 2rem;
     background-color: #95a9bb;
     border: 5px dashed blue;
+    border-radius: 50%;
     opacity: .85;
     grid-column: 2 / 4;
     grid-row: 2 / 4;
@@ -50,6 +51,7 @@ body{
 .legend__title{
     font-size: 1.6rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .legend__list{
@@ -63,17 +65,17 @@ body{
 
 .legend__item-1{
     grid-column: 1 / 1;
-    background: linear-gradient(to right, #ee0d0d 0%, #db3131 100%);
+    background: linear-gradient(to right, #fa0303 0%, #f05209 100%);
 }
 
 .legend__item-2{
     grid-column: 2 / 2;
-    background: linear-gradient(to right, #db3131 0%, #e6b01c 100%);
+    background: linear-gradient(to right, #f05209 0%, #dad60d 100%);
 }
 
 .legend__item-3{
     grid-column: 3 / 3;
-    background: linear-gradient(to right, #e6b01c 0%, #c5c740 100%);
+    background: linear-gradient(to right, #dad60d 0%, #aabe63 100%);
 }
 
 .legend__item-4{
